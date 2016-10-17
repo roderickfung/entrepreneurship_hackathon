@@ -25,14 +25,39 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Pagination for admin panel
+gem 'kaminari'
+
+# Styling CSS
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-glyphicons'
+gem 'sass-rails', '~> 5.0'
+
+# Profile Image
+gem 'mini_magick'
+gem 'carrierwave', '>= 1.0.0.beta', '< 2.0'
+
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-particles.js'
+# end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  # gem 'byebug', platform: :mri
+  gem 'faker', github: 'stympy/faker'
+  gem 'awesome_print'
+  gem 'interactive_editor'
+  gem 'hirb'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'rspec'
+
 end
 
 group :development do
