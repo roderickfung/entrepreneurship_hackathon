@@ -25,8 +25,11 @@ ActiveRecord::Schema.define(version: 20161017122556) do
     t.string   "linkedin"
     t.string   "website"
     t.integer  "participation_year"
+    t.string   "image"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.index ["first_name", "last_name"], name: "index_speakers_on_first_name_and_last_name", using: :btree
+    t.index ["image", "description"], name: "index_speakers_on_image_and_description", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161017122556) do
     t.string   "auth_token"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["email", "auth_token"], name: "index_users_on_email_and_auth_token", using: :btree
   end
 
 end

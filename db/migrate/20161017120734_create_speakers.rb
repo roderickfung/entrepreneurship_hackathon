@@ -10,8 +10,11 @@ class CreateSpeakers < ActiveRecord::Migration[5.0]
       t.string :linkedin
       t.string :website
       t.integer :participation_year
+      t.string :image
 
       t.timestamps
     end
+    add_index :speakers, [:first_name, :last_name]
+    add_index :speakers, [:image, :description]
   end
 end

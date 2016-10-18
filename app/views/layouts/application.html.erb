@@ -10,7 +10,30 @@
   </head>
 
   <body>
+    <!-- NavBar -->
     <%= render partial: '/layouts/partials/top_nav'%>
+
+    <!-- Flash Messages -->
+
+    <div class='container'>
+      <div style='margin-top: 100px;'></div>
+      <div class='alert-success' style='z-index: 1;'>
+        <center><%=flash[:notice]%></center>
+      </div>
+      <div class='alert-warning' style='z-index: 1;'>
+        <center><%=flash[:alert]%></center>
+      </div>
+    </div>
+
     <%= yield %>
+
+    <!-- Footer -->
+    <div class='footer'>
+      <div class='container'>
+        <%= render partial: '/layouts/partials/footer'%>
+      </div>
+    </div>
+
+    <%= render partial: '/modals/signin' %>
   </body>
 </html>

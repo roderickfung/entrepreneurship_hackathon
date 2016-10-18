@@ -36,7 +36,8 @@ gem 'kaminari'
 # Styling CSS
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-glyphicons'
-gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
+gem "font-awesome-rails"
 
 # Profile Image
 gem 'mini_magick'
