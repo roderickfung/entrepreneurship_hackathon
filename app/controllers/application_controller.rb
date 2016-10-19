@@ -3,13 +3,13 @@ class ApplicationController < ActionController::Base
 
 
   def user_signed_in?
-    sessions[:auth_token].present?
+    session[:auth_token].present?
   end
   helper_method :user_signed_in?
 
   def current_user
     if user_signed_in?
-      @current_user ||= User.find_by_auth_token(sessions[:auth_token]) if sessions[:auth_token]
+      @current_user ||= User.find_by_auth_token(session[:auth_token]) if session[:auth_token]
     end
   end
 

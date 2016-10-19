@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:alert] = 'Account not activated, unable to sign in.'
       redirect_to root_path
     elsif @user && @user.authenticate(params[:password]) && @user.activated == true
-      sessions[:user] = @user.auth_token
+      session[:auth_token] = @user.auth_token
       redirect_to root_path, notice: 'Signed In'
     else
       flash[:alert] = @user.errors.full_messages.to_sentence
