@@ -19,4 +19,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def find_event
+    @event ||= Event.where('aasm_state == ?', 'current')
+    @event.where('start_date > ?, aasm_state == ?', Date.today, 'published').first if @event == nil
+  end
+
 end

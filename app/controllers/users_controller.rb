@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :find_user, except: [:new, :create]
 
   def new
     @user = User.new
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @sponsors = @event.sponsors
   end
 
   def edit
@@ -41,6 +42,8 @@ class UsersController < ApplicationController
   end
 
   def find_event
-    
+    @event ||= Event.find_by_aasm_state 'current'
+    @event.where('start_date > ?, aasm_state == ?', Date.today, 'published').first if @event == nil
   end
+
 end

@@ -1,5 +1,7 @@
 class Speaker < ApplicationRecord
 
+  belongs_to :event
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
   validates :first_name, presence: true
@@ -8,7 +10,7 @@ class Speaker < ApplicationRecord
   validates :email, presence: true, format: VALID_EMAIL_REGEX
   validates :description, presence: true
   validates :event_id, uniqueness: {scope: :email}
-  
+
   mount_uploader :image, ImageUploader
 
   private

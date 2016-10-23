@@ -1,5 +1,9 @@
 class Event < ApplicationRecord
 
+  has_many :speakers, dependent: :nullify
+  has_many :sponsors, dependent: :nullify
+  has_many :participants, dependent: :nullify
+
   validates :title, presence: true
   validates :description, presence: true
   validates :start_date, presence: true
