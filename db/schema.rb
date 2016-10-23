@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017122556) do
+ActiveRecord::Schema.define(version: 20161022230140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_participants_on_event_id", using: :btree
+  end
 
   create_table "speakers", force: :cascade do |t|
     t.string   "first_name"
@@ -24,12 +43,25 @@ ActiveRecord::Schema.define(version: 20161017122556) do
     t.string   "twitter"
     t.string   "linkedin"
     t.string   "website"
-    t.integer  "participation_year"
+    t.date     "participation_year"
     t.string   "image"
+    t.integer  "event_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.index ["event_id"], name: "index_speakers_on_event_id", using: :btree
     t.index ["first_name", "last_name"], name: "index_speakers_on_first_name_and_last_name", using: :btree
     t.index ["image", "description"], name: "index_speakers_on_image_and_description", using: :btree
+  end
+
+  create_table "sponsors", force: :cascade do |t|
+    t.string   "company_name"
+    t.string   "description"
+    t.string   "logo"
+    t.string   "representative"
+    t.integer  "event_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["event_id"], name: "index_sponsors_on_event_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +77,7 @@ ActiveRecord::Schema.define(version: 20161017122556) do
     t.index ["email", "auth_token"], name: "index_users_on_email_and_auth_token", using: :btree
   end
 
+  add_foreign_key "participants", "events"
+  add_foreign_key "speakers", "events"
+  add_foreign_key "sponsors", "events"
 end

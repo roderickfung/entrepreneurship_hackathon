@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: VALID_EMAIL_REGEX
   validates :password, length: {minimum: 6}, on: [:create, :update]
-  validates :password_digest, presence: {message: 'Password cannot be blank'}
+  validates :password_confirmation, presence: {message: 'Password cannot be blank'}
 
   before_create { generate_token(:auth_token) }
 
