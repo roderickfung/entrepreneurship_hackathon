@@ -7,12 +7,18 @@ class Speaker < ApplicationRecord
   validates :title, presence: true
   validates :email, format: VALID_EMAIL_REGEX
   validates :description, presence: true
-  validates :participation_year, presence: true, numericality: {greater_than: 2015, less_than_or_equal_to: 2100}, uniqueness: {scope: [:first_name, :last_name]}
+  validates :participation_year, presence: true, uniqueness: {scope: [:first_name, :last_name]}
+
+  validate participation_year_cannot_be_in_the_past
 
   mount_uploader :image, ImageUploader
 
   def full_name
     "#{first_name} #{last_name}".squeeze(' ').strip.titleize
+  end
+
+  def participation_year_cannot_be_in_the_past
+    errors.add(:participation_year, 'Cannot be in the past') if !participation_year.blank? and participation_year.year < Date.today.year
   end
 
 end

@@ -9,9 +9,10 @@ class CreateSpeakers < ActiveRecord::Migration[5.0]
       t.string :twitter
       t.string :linkedin
       t.string :website
-      t.integer :participation_year
+      t.date :participation_year
       t.string :image
 
+      t.references :event, foreign_key: true
       t.timestamps
     end
     add_index :speakers, [:first_name, :last_name]
