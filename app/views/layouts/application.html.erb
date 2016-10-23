@@ -6,15 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- <script src="particles.js"></script> -->
+
   </head>
 
   <body>
     <!-- NavBar -->
-    <%= render partial: '/layouts/partials/top_nav'%>
+    <%if user_signed_in? %>
+      <%= render partial: '/layouts/partials/user_nav'%>
+    <%else%>
+      <%= render partial: '/layouts/partials/top_nav'%>
+    <%end%>
 
     <!-- Flash Messages -->
-
     <div class='container'>
       <div style='margin-top: 100px;'></div>
       <div class='alert-success' style='z-index: 1;'>
@@ -24,6 +27,8 @@
         <center><%=flash[:alert]%></center>
       </div>
     </div>
+
+    <!-- Content -->
     <%= yield %>
 
     <!-- Footer -->

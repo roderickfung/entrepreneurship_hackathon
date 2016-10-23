@@ -19,7 +19,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    session[:auth_token] = nil
+    redirect_to root_path, notice: 'Signed Out'
   end
 
 end

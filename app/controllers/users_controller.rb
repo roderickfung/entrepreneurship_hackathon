@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_user, except: [:new, :create]
+  before_action :find_event, only: [:show]
 
   def new
     @user = User.new
@@ -17,6 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @sponsors = @event.sponsors
+    @speakers = @event.speakers
   end
 
   def edit
@@ -43,7 +46,8 @@ class UsersController < ApplicationController
 
   def find_event
     @event ||= Event.find_by_aasm_state 'current'
-    @event.where('start_date > ?, aasm_state == ?', Date.today, 'published').first if @event == nil
+    flash[:alert] = 'This is not the upcoming event, please set an upcoming event.'
+    @event = Event.where('start_date > ? AND aasm_state = ?', Date.today, 'published').first if @event == nil
   end
 
 end

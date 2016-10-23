@@ -1,5 +1,4 @@
 class Sponsor < ApplicationRecord
-
   belongs_to :event
 
   validates :company_name, presence: true
