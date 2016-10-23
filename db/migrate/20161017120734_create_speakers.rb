@@ -9,7 +9,6 @@ class CreateSpeakers < ActiveRecord::Migration[5.0]
       t.string :twitter
       t.string :linkedin
       t.string :website
-      t.date :participation_year
       t.string :image
 
       t.references :event, foreign_key: true

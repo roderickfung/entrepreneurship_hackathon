@@ -28,7 +28,6 @@ namespace :db do
 				title: Faker::Name.title,
 				email: Faker::Internet.email,
 				description: Faker::Lorem.paragraph(3),
-				participation_year: "2017",
 				event_id: 1
 			)
 		end

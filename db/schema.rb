@@ -20,8 +20,11 @@ ActiveRecord::Schema.define(version: 20161022230140) do
     t.string   "description"
     t.date     "start_date"
     t.date     "end_date"
+    t.string   "aasm_state"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.index ["aasm_state", "start_date", "end_date"], name: "index_events_on_aasm_state_and_start_date_and_end_date", using: :btree
+    t.index ["title", "description"], name: "index_events_on_title_and_description", using: :btree
   end
 
   create_table "participants", force: :cascade do |t|
@@ -43,11 +46,10 @@ ActiveRecord::Schema.define(version: 20161022230140) do
     t.string   "twitter"
     t.string   "linkedin"
     t.string   "website"
-    t.date     "participation_year"
     t.string   "image"
     t.integer  "event_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.index ["event_id"], name: "index_speakers_on_event_id", using: :btree
     t.index ["first_name", "last_name"], name: "index_speakers_on_first_name_and_last_name", using: :btree
     t.index ["image", "description"], name: "index_speakers_on_image_and_description", using: :btree

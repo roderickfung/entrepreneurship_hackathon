@@ -35,4 +35,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
+
+  def find_user
+    @user ||= User.find_by_auth_token session[:auth_token]
+  end
+
+  def find_event
+    
+  end
 end
