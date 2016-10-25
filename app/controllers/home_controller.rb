@@ -2,11 +2,10 @@ class HomeController < ApplicationController
   before_action :user_check
 
   def index
-    @participant = Participant.new
-    @event = Event.find_by_aasm_state 'current'
-    @event = Event.where('aasm_state = ? AND start_date > ?', 'published', Date.today).first if @event == nil
-    @sponsors = @event.sponsors
-    @speakers = @event.speakers
+    # @event = Event.find_by_aasm_state 'current'
+    # @event = Event.where('aasm_state = ? AND start_date > ?', 'published', Date.today).first if @event == nil
+    # @sponsors = @event.sponsors
+    # @speakers = @event.speakers
     @participant = Participant.new
   end
 
