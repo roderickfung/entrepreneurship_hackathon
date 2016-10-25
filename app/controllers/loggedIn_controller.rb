@@ -1,4 +1,4 @@
-class LoggedIn_controller > ApplicationController
+class LoggedInController < ApplicationController
   before_action :authenticate_user!
 
   private
@@ -6,4 +6,5 @@ class LoggedIn_controller > ApplicationController
   def find_user
     @user ||= User.find_by_auth_token session[:auth_token]
   end
+  
 end
