@@ -7,10 +7,15 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show]
   namespace :users, path: 'user' do
     resources :speakers, only: [:new, :create, :edit, :update, :destroy]
+    resources :events, except: [:index, :show]
+    resources :sponsors, except: [:index, :show]
   end
 
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :speakers, only: [:show, :index]
+  resources :sponsors, only: [:show, :index]
+  resources :events, only: [:show, :index]
+  resources :participants, only: [:new, :create]
 
 end

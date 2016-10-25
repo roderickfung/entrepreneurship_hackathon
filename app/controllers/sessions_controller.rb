@@ -11,15 +11,16 @@ class SessionsController < ApplicationController
       redirect_to root_path
     elsif @user && @user.authenticate(params[:password]) && @user.activated == true
       session[:auth_token] = @user.auth_token
-      redirect_to root_path, notice: 'Signed In'
+      redirect_to user_path(@user), notice: 'Signed In'
     else
-      flash[:alert] = @user.errors.full_messages.to_sentence
+      flash[:alert] = 'Incorrect Credentials'
       redirect_to root_path
     end
   end
 
   def destroy
-
+    session[:auth_token] = nil
+    redirect_to root_path, notice: 'Signed Out'
   end
 
 end

@@ -11,6 +11,11 @@
   border-color: #3e3f3a;
 }
 
+.logged-nav-bg {
+  background-color: #3e3f3a !important;
+  border-color: #3e3f3a !important;
+}
+
 @media (min-width: 768px) {
   .j-img {
     height: 100%;
@@ -23,7 +28,7 @@
 
   #landing-content-wrapper {
     position: relative;
-    margin-top: 100vh;
+    margin-top: 91vh;
   }
 
   .j-home {
@@ -66,7 +71,7 @@
     color: rgba(255, 255, 255, 0.6);
     position: absolute;
     top: 40%;
-    left: 43.5%;
+    // left: 43.5%;
     text-align: center;
   }
 

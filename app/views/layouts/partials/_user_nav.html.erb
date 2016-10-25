@@ -1,0 +1,44 @@
+<nav class='navbar navbar-default navbar-fixed-top logged-nav-bg'>
+  <div class='container'>
+    <ul class='nav navbar-nav navbar-left'>
+      <li class='nav-brand'>
+        <%=link_to root_path, class: 'navbar-brand' do%>
+          <%= image_tag 'logo', class: 'nav-logo'%>
+        <%end%>
+      </li>
+
+    </ul>
+    <ul class='nav navbar-nav navbar-right'>
+      <li class='dropdown'>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events&nbsp;&nbsp;<i class='caret'></i></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Add Event', '#'%></li>
+          <li><%= link_to 'Event List', '#'%></li>
+          <li><%= link_to 'Current Event', '#'%></li>
+        </ul>
+      </li>
+      <li class='dropdown'>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Speakers&nbsp;&nbsp;<i class='caret'></i></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Add Speaker', '#'%></li>
+          <li><%= link_to 'Speaker List', '#'%></li>
+        </ul>
+      </li>
+      <li class='dropdown'>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sponsors&nbsp;&nbsp;<i class='caret'></i></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Add Sponsors', '#'%></li>
+          <li><%= link_to 'Sponsor List', '#'%></li>
+        </ul>
+      </li>
+      <li class='dropdown'>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin&nbsp;&nbsp;<i class='caret'></i></a>
+        <ul class="dropdown-menu">
+          <li><%= link_to 'Dashboard', '#'%></li>
+          <li><%= link_to 'Edit Profile', '#'%></li>
+          <li><%= link_to 'Sign Out', session_path(@user), method: :delete %></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

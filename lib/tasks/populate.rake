@@ -28,7 +28,6 @@ namespace :db do
 				title: Faker::Name.title,
 				email: Faker::Internet.email,
 				description: Faker::Lorem.paragraph(3),
-				participation_year: "2017",
 				event_id: 1
 			)
 		end
@@ -37,7 +36,8 @@ namespace :db do
 			@sponsor = Sponsor.create!(
 				company_name: Faker::Company.name,
 				description: Faker::Lorem.paragraph(5),
-				representative: Faker::Name.name
+				representative: Faker::Name.name,
+				event_id: 1
 			)
 		end
   end

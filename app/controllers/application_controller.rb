@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-
   def user_signed_in?
     session[:auth_token].present?
   end
@@ -12,6 +11,7 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by_auth_token(session[:auth_token]) if session[:auth_token]
     end
   end
+  helper_method :current_user
 
   def authenticate_user!
     if user_signed_in? == false
@@ -19,4 +19,13 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
     end
   end
+
+  def current_event
+    @event ||= Event.find_by_aasm_state 'current'
+    if @event.present? == false
+      @event = Event.where('aasm_state = ? AND start_date > ?', 'published', Date.today).first
+    end
+  end
+  helper_method :current_event
+
 end
