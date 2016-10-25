@@ -1,0 +1,47 @@
+<%= form_for @participant do |f| %>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-12'>
+        <div class='input-group'>
+          <div class='input-group-addon'>fn</div>
+          <%= f.text_field :first_name, class:'form-control', placeholder:'First Name'%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-12'>
+        <div class='input-group'>
+          <div class='input-group-addon'>ln</div>
+          <%= f.text_field :last_name, class:'form-control', placeholder:'Last Name'%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-12'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='glyphicon glyphicon-envelope'></i></div>
+          <%= f.email_field :email, class:'form-control', placeholder:'Email Address'%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-2 col-sm-8'>
+        <%= f.submit 'Register', class: 'btn btn-primary register-submit', style: 'width: 100%;'%>
+      </div>
+    </div>
+  </div>
+
+
+<%end%>

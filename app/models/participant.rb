@@ -14,4 +14,8 @@ class Participant < ApplicationRecord
     "#{first_name} #{last_name}".squeeze(' ').strip.titleize
   end
 
+  def set_paid_default
+    self.paid ||= false
+  end
+
 end

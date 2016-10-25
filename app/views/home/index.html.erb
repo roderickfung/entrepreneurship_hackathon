@@ -4,21 +4,28 @@
     <div id="particles-js"></div>
     <div id='particles-two'></div>
     <div class='header-text-group'>
-      <h1 class='header-text'>S T A R T U P</h1>
-      <h1 class='header-text'>H A C K S</h1>
+      <img src='SHLogo.png' width='25%'/>
       <h1 class='header-text'>2 0 1 7</h1>
+      <div class='page-space'></div>
+      <a class='btn btn-info' type='button' data-toggle='modal' data-target='#registerModal'>
+        Register Now
+      </a>
+      <%# link_to 'Register Now', 'https://www.eventbrite.com/e/startup-hacks-2017-business-startup-hackathon-for-youth-tickets-27669172239?ref=eweb', class: 'btn btn-info'%>
     </div>
   </div>
 </div>
-<div id='landing-content-wrapper'>
-  <div class='content-block'>
-    <div class='container'>
-      <center><h3>Launching January 11, 2017</h3></center>
-    </div>
-  </div>
-</div>
-<div class='content-block two'>
-  <div class='container'>
-    <center><h3>Speakers</h3></center>
-  </div>
-</div>
+
+<!-- Date -->
+<%= render partial: '/home/partials/block_one'%>
+
+<%= render partial: '/home/temp_partials/speakers'%>
+
+<%= render partial: '/home/temp_partials/sponsors'%>
+
+<%# if @speakers %>
+  <%# render partial: '/home/partials/block_two'%>
+<%#end%>
+
+<%# if @sponsors %>
+  <%# render partial: '/home/partials/block_three'%>
+<%#end%>

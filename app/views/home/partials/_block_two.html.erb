@@ -1,0 +1,19 @@
+<div class='content-block two'>
+  <div class='container'>
+    <div class='row'>
+      <center><h3>Speakers</h3></center>
+    </div>
+    <div class='page-space'></div>
+    <div class='row'>
+      <% @speakers.each do |speaker|%>
+        <div class='col-sm-4'>
+          <div class='panel panel-primary'>
+            <div class='panel-body'>
+              <center><%= image_tag %></center>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>

@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   resources :speakers, only: [:show, :index]
   resources :sponsors, only: [:show, :index]
   resources :events, only: [:show, :index]
+  resources :participants, only: [:new, :create]
 
 end
