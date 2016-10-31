@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :new_participant
+
   def user_signed_in?
     session[:auth_token].present?
   end
@@ -11,7 +13,7 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by_auth_token(session[:auth_token]) if session[:auth_token]
     end
   end
-  helper_method :current_user
+  helper_method :current_userr
 
   def authenticate_user!
     if user_signed_in? == false
@@ -27,5 +29,9 @@ class ApplicationController < ActionController::Base
     end
   end
   helper_method :current_event
+
+  def new_participant
+    @participant ||= Participant.new
+  end
 
 end

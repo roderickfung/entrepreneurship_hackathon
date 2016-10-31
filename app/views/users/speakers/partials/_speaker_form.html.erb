@@ -1,0 +1,61 @@
+<%= form_for @speaker do |f| %>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-3'>
+        <%= f.label :first_name, 'First Name:', class: 'control-label'%>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-3'>
+        <%= f.label :last_name, 'Last Name:', class: 'control-label'%>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-3'>
+        <%= f.label :title, 'Title:', class: 'control-label'%>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-3'>
+        <%= f.label :email, 'E-mail:', class: 'control-label'%>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'abc@xyz.com' %>
+      </div>
+    </div>
+  </div>
+
+<%end%>

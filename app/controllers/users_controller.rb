@@ -48,6 +48,7 @@ class UsersController < ApplicationController
     @event ||= Event.find_by_aasm_state 'current'
     flash[:alert] = 'This is not the upcoming event, please set an upcoming event.'
     @event = Event.where('start_date > ? AND aasm_state = ?', Date.today, 'published').first if @event == nil
+    @event = Event.where('start_date > ?', Date.today).first if @event == nil
   end
 
 end
