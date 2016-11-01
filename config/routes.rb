@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get '/about' => 'home#about', as: :about
+  get '/contact' => 'home#contact', as: :contact
+  get '/resources' => 'home#resources', as: :resources
 
-  resources :users, only: [:new, :create, :show]
+  resources :users
   namespace :users, path: 'user' do
     resources :speakers, only: [:new, :create, :edit, :update, :destroy]
     resources :events, except: [:index, :show]

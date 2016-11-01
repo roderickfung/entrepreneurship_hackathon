@@ -39,4 +39,6 @@ class Users::SpeakersController < LoggedinController
     params.require(:speaker).permit(:first_name, :last_name, :title, :email, :description, :twitter, :linkedin, :website, :image)
   end
 
+  
+
 end

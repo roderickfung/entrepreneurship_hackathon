@@ -1,4 +1,4 @@
-class SpeakersController < ApplicationController
+class SpeakersController < LoggedinController
 
   def index
 
@@ -7,5 +7,5 @@ class SpeakersController < ApplicationController
   def show
 
   end
-  
+
 end
