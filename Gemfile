@@ -50,6 +50,13 @@ gem 'aasm'
 # end
 gem 'faker', github: 'stympy/faker'
 
+# Geocoding
+gem 'geocoder'
+
+# GMAP
+gem 'gmaps4rails'
+gem 'underscore-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platform: :mri

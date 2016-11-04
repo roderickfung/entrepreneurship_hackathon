@@ -1,5 +1,28 @@
-<div class='row'>
-  <div class='col-sm-offset-1 col-sm-10'>
-    <h2>Speaker Index</h2>
+<div class='nav-filler'></div>
+<div class='content-block two'>
+  <div class='container'>
+    <div class='page-space'></div>
+      <div class='row'>
+        <center>
+          <h3>Guest Speakers</h3>
+        </center>
+      </div>
+      <div class='page-space'></div>
+      <div class='row'>
+        <%= render partial: '/speakers/temp_partials/speaker_list'%>
+      </div>
+  </div>
+</div>
+<div class='content-block three'>
+  <div class='container'>
+      <div class='row'>
+        <center>
+          <h3>Keyote Speakers</h3>
+        </center>
+      </div>
+      <div class='page-space'></div>
+      <div class='row'>
+        <%= render partial: '/speakers/temp_partials/keynote_list'%>
+      </div>
   </div>
 </div>

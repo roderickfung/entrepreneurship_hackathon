@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :speakers, only: [:new, :create, :edit, :update, :destroy]
     resources :events, except: [:index, :show]
     resources :sponsors, except: [:index, :show]
+    resources :locations, except: [:show]
   end
 
   resources :sessions, only: [:new, :create, :destroy]
