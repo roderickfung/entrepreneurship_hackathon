@@ -13,11 +13,11 @@
 
   <!-- Second Column -->
   <div class='col-sm-3'>
-    <h5 style='color: #888'>ABOUT US</h5>
+    <h5 style='color: #888'>CONNECT</h5>
   </div>
 
   <div class='col-sm-3'>
-    <h5 style='color: #888'>CONNECT</h5>
+    <h5 style='color: #888'>ADMIN PANEL</h5>
   </div>
 
 </div>
@@ -27,24 +27,27 @@
   <!-- First Column -->
   <div class='col-sm-3'>
     <a href='/'><p style='color: #ccc;'>Home</p></a>
-    <a href='#'><p style='color: #ccc;'>Speakers</p></a>
+    <%= link_to 'Speakers', speakers_path, style: 'color: #ccc;'%>
+    <!-- <a href='#'><p style='color: #ccc;'>Speakers</p></a> -->
   </div>
 
   <!-- Second Column -->
   <div class='col-sm-3'>
-    <a href='#'><p style='color: #ccc;'>About</p></a>
-    <a href='#'><p style='color: #ccc;'>Resources</p></a>
+    <%# link_to 'About', about_path, style: 'color: #ccc;'%>
+    <!-- <%= link_to 'Resources', resources_path, style: 'color: #ccc;'%> -->
+    <a href='/about'><p style='color: #ccc;'>About</p></a>
+    <a href='<%=resources_path%>'><p style='color: #ccc;'>Resources</p></a>
   </div>
 
   <!-- Third Column -->
   <div class='col-sm-3'>
-    <a href='#'><p style='color: #ccc;'><i class='fa fa-facebook-square' aria-hidden='true' style='color: #ccc;'></i> &nbsp;&nbsp;&nbsp; Facebook</p></a>
-    <a href='#'><p style='color: #ccc;'><i class='fa fa-twitter-square' aria-hidden='true' style='color: #ccc;'></i> &nbsp;&nbsp;&nbsp; Twitter</p></a>
+    <a href='https://www.facebook.com/startupacademybc'><p style='color: #ccc;'><i class='fa fa-facebook-square' aria-hidden='true' style='color: #ccc;'></i> &nbsp;&nbsp;&nbsp; Facebook</p></a>
+    <a href='http://bit.ly/2eBEzF2'><p style='color: #ccc;'><i class='fa fa-user-plus' aria-hidden='true' style='color: #ccc;'></i> &nbsp;&nbsp;&nbsp; Register</p></a>
   </div>
 
   <!-- FOURTH COLUMN -->
   <div class='col-sm-3'>
-    <a href='#'><p style='color: #ccc;'>Contact Us</p></a>
+    <a href='/contact'><p style='color: #ccc;'>Contact Us</p></a>
     <% if user_signed_in? %>
       <%= link_to 'Sign Out', session_path(@user), method: :delete%>
     <%else%>
@@ -54,4 +57,12 @@
     <%end%>
   </div>
 
+</div>
+
+<div class='row'>
+  <div class='col-sm-offset-4 col-sm-4'>
+    <!-- <center> -->
+      <h6>built by: <%= link_to 'Roderick Fung', 'http://www.linkedin.com/in/roderickfung'%></h6>
+    <!-- </center> -->
+  </div>
 </div>

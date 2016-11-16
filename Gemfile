@@ -48,11 +48,18 @@ gem 'aasm'
 # source 'https://rails-assets.org' do
 #   gem 'rails-assets-particles.js'
 # end
+gem 'faker', github: 'stympy/faker'
+
+# Geocoding
+gem 'geocoder'
+
+# GMAP
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platform: :mri
-  gem 'faker', github: 'stympy/faker'
   gem 'awesome_print'
   gem 'interactive_editor'
   gem 'hirb'
@@ -60,7 +67,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'rspec'
-
 end
 
 group :development do

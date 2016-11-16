@@ -25,6 +25,10 @@
   margin-top: 40px;
 }
 
+.full-page-space {
+  margin-top: 90vh;
+}
+
 .form-space {
   margin-top: 1rem;
   margin-bottom: 1rem;

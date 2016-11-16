@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161023202343) do
+ActiveRecord::Schema.define(version: 20161116022243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20161023202343) do
     t.datetime "updated_at",  null: false
     t.index ["aasm_state", "start_date", "end_date"], name: "index_events_on_aasm_state_and_start_date_and_end_date", using: :btree
     t.index ["title", "description"], name: "index_events_on_title_and_description", using: :btree
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "address"
+    t.string   "postal_code"
+    t.integer  "event_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.float    "longitude"
+    t.float    "latitude"
+    t.index ["event_id"], name: "index_locations_on_event_id", using: :btree
   end
 
   create_table "participants", force: :cascade do |t|
@@ -80,6 +91,7 @@ ActiveRecord::Schema.define(version: 20161023202343) do
     t.index ["email", "auth_token"], name: "index_users_on_email_and_auth_token", using: :btree
   end
 
+  add_foreign_key "locations", "events"
   add_foreign_key "participants", "events"
   add_foreign_key "speakers", "events"
   add_foreign_key "sponsors", "events"

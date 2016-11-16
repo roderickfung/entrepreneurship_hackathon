@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+
   </head>
 
   <body>
@@ -39,6 +40,19 @@
     </div>
 
     <%= render partial: '/modals/signin' %>
-    <%= render partial: '/modals/register' %>
+    <%= render partial: '/modals/register', participant: @participant %>
+
+    <!-- Keynote List -->
+    <%= render partial: '/speakers/temp_partials/danieldubois'%>
+    <%= render partial: '/speakers/temp_partials/igorfaletski'%>
+    <!-- Speaker List -->
+    <%= render partial: '/speakers/temp_partials/manishanarula'%>
+    <%= render partial: '/speakers/temp_partials/husseinhallak'%>
+    <%= render partial: '/speakers/temp_partials/chinghingchang'%>
+    <%= render partial: '/speakers/temp_partials/keithippel'%>
+    <%= render partial: '/speakers/temp_partials/loriecorcuera'%>
+    <%= render partial: '/speakers/temp_partials/amyngai'%>
+    <%= render partial: '/speakers/temp_partials/paulinacameron'%>
+    <%= render partial: '/speakers/temp_partials/rogerhaskett'%>
   </body>
 </html>

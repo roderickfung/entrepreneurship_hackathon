@@ -1,0 +1,129 @@
+<%= form_for @speaker do |f| %>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='fa fa-file-image-o'></i></div>
+          <%= f.file_field :image, class: 'form-control'%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'>fn</div>
+          <%= f.text_field :first_name, class: 'form-control', placeholder: 'First Name' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'>ln</div>
+          <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last Name' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='fa fa-briefcase'></i></div>
+          <%= f.text_field :title, class: 'form-control', placeholder: 'Title' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='fa fa-envelope-o'></i></div>
+          <%= f.email_field :email, class: 'form-control', placeholder: 'abc@xyz.com' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='fa fa-align-left'></i></div>
+          <%= f.text_area :description, class: 'form-control', placeholder: 'Description', rows: 5, style: 'resize: none; overflow: scroll;' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='fa fa-twitter'></i></div>
+          <%= f.text_field :twitter, class:'form-control', placeholder: '@twitterhandle'%>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='fa fa-linkedin'></i></div>
+          <%= f.text_field :linkedin, class:'form-control', placeholder: 'linkedin.com/in/linkedin_name' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <div class='input-group'>
+          <div class='input-group-addon'><i class='fa fa-link'></i></div>
+          <%= f.text_field :website, class:'form-control', placeholder: 'www.example.com' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+
+  <div class='form-group'>
+    <div class='row'>
+      <div class='col-sm-offset-3 col-sm-6'>
+        <%= f.submit 'Save', class: 'btn btn-primary', style: 'width: 100%;'%>
+      </div>
+    </div>
+  </div>
+
+  <div class='page-space'></div>
+<%end%>
