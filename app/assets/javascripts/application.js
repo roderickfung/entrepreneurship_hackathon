@@ -17,4 +17,7 @@
 //= require gmaps/google
 //= require turbolinks
 //= require particles.min
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .

@@ -16,6 +16,18 @@
   border-color: #3e3f3a !important;
 }
 
+.panel {
+  border-radius: 0px;
+}
+
+.panel .panel-heading {
+  border-radius: 0px;
+}
+
+.panel .panel-box {
+  // background-color: ;
+}
+
 @media (min-width: 768px) {
 
   #nav-btn {
