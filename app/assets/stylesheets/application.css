@@ -39,6 +39,10 @@
 }
 
 @media (min-width: 768px) {
+/*
+  .nav-brand {
+    background-color: #3e3f3a !important;
+  }*/
 
   .modal-content {
     border: 0px !important;
