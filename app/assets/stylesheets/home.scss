@@ -1,9 +1,56 @@
+.keynote-background {
+  background-image: url('https://s3-us-west-2.amazonaws.com/startupacademy-yvr/Asset/5');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+
+.sponsor-background {
+  background-image: url('https://s3-us-west-2.amazonaws.com/startupacademy-yvr/Asset/4');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+// Link Color
+a {
+  color: #27C1F0;
+}
+
+a:hover {
+  // color: #3E88E0;
+  color: #27C1F0;
+}
+
+.modal-container > i {
+  color: #3E88E0;
+  font-size: 1.2rem;
+}
+
+.modal-container > i:hover {
+  color: #222;
+  font-size: 1.2rem;
+}
 // Laptop Screen
+
+.btn-scroll {
+  background-color: #fff !important;
+  color: #D9534F !important;
+}
+
 .transition {
-  -webkit-transition: all 1s ease-in-out;
-  -moz-transition: all 1s ease-in-out;
-  -o-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 1.5s ease-in-out;
+  -moz-transition: all 1.5s ease-in-out;
+  -o-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+.transition-fast {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .nav-bg {
@@ -22,10 +69,6 @@
 
 .panel .panel-heading {
   border-radius: 0px;
-}
-
-.panel .panel-box {
-  // background-color: ;
 }
 
 @media (min-width: 768px) {
@@ -78,20 +121,26 @@
   }
 
   .navbar-default {
-    background-color: rgba(100, 100, 100, 0);
-    border-color: rgba(100, 100, 100, 0);
+    // background-color: rgba(100, 100, 100, 0);
+    // border-color: rgba(100, 100, 100, 0);
+
+    background-color: #3E88E0;
+    border-color: #3E88E0;
   }
 
   .show {
-    // background-color: #3e3f3a;
-    // border-color: #3e3f3a;
     background-color: #222222;
     border-color: #222222;
+    // background-color: #3E88E0;
+    // border-color: #3E88E0;
   }
 
-  .no-transition {
-    background-color: #fff;
-    border-color: #fff;
+  .navbar-default .navbar-nav > li > a {
+    color: #fff;
+  }
+
+  .navbar-default .navbar-nav > li > a:hover {
+    color: #EFF6FA;
   }
 
   .header-text-group {
