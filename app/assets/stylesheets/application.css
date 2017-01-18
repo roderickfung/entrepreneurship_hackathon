@@ -39,13 +39,17 @@
 }
 
 @media (min-width: 768px) {
+/*
+  .nav-brand {
+    background-color: #3e3f3a !important;
+  }*/
 
   .modal-content {
     border: 0px !important;
   }
 
   .modal-dialog {
-    width: 450px !important;
+    width: 500px !important;
     margin: 30px auto;
   }
 
@@ -72,6 +76,7 @@
     bottom: 0;
     min-height: 15rem;
     background-color: #222222;
+    /*background-color: #3E3F3A;*/
     width: 100%;
     padding-top: 2rem;
     padding-bottom: 2rem;

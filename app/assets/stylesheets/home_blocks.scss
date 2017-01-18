@@ -9,6 +9,7 @@
   .content-block.two {
     // background-color: #27C1F0;
     background-color: #3e3f3a;
+    // background-color: #3E88E0;
     color: #fff;
   }
 
@@ -16,4 +17,26 @@
     background-color: #fff;
     color: #222;
   }
+
+  // Sponsor list
+  .sponsor-panel {
+    background-color: rgba(255,255,255,1);
+    border: 2px solid #222;
+    width: 175px;
+    height: 175px;
+  }
+}
+
+.sponsor-pic {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  max-width: 80%;
+  max-height: 80%;
+  height: auto;
+  width: auto;
 }
