@@ -27,8 +27,11 @@
   <!-- First Column -->
   <div class='col-sm-3'>
     <a href='/'><p style='color: #ccc;'>Home</p></a>
-    <%= link_to 'Speakers', speakers_path, style: 'color: #ccc;'%>
-    <!-- <a href='#'><p style='color: #ccc;'>Speakers</p></a> -->
+    <%= mail_to 'will@startupacademybc.org' do%>
+      <p style='color: #ccc'>
+        Contact Us
+      </p>
+    <%end%>
   </div>
 
   <!-- Second Column -->
@@ -47,11 +50,6 @@
 
   <!-- FOURTH COLUMN -->
   <div class='col-sm-3'>
-    <%= mail_to 'will@startupacademybc.org' do%>
-      <p style='color: #ccc'>
-        Contact Us
-      </p>
-    <%end%>
     <% if user_signed_in? %>
       <%= link_to 'Sign Out', session_path(@user), method: :delete%>
     <%else%>
