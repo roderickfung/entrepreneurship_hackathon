@@ -9,13 +9,12 @@
 
     </ul>
     <div class='nav navbar-nav navbar-right'>
-      <%= link_to 'Register', '#', class: 'btn btn-danger btn-sm transition', id:'nav-btn', data:{toggle: 'modal', target: '#registerModal'}%>
+      <%= link_to 'Register', '#', class: 'btn btn-danger btn-sm transition', id: 'nav-btn' %>
+      <%# link_to 'Register', '#', class: 'btn btn-danger btn-sm transition', id:'nav-btn', data:{toggle: 'modal', target: '#registerModal'}%>
     </div>
     <ul class='nav navbar-nav navbar-right'>
       <li><%= link_to 'About', about_path%></li>
-      <li><%= link_to 'Speakers', speakers_path%></li>
-      <li><%= link_to 'Resource', resources_path%></li>
-      <!-- <li><%# link_to 'Contact', contact_path%></li> -->
+      <li><%= link_to 'Schedule', resources_path%></li>
     </ul>
   </div>
 </nav>
